@@ -9,7 +9,7 @@ const sgMail = require('@sendgrid/mail')
 const app = express();
 
 app.use(cors({
-  origin:"https://majestic-kangaroo-39d8d2.netlify.app"
+  origin:"https://version-1-0-1--majestic-kangaroo-39d8d2.netlify.app"
 }));
 
 app.use(bodyParser.json());
