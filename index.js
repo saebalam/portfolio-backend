@@ -7,19 +7,11 @@ const PORT = process.env.PORT || 9000;
 const sgMail = require('@sendgrid/mail')
 
 const app = express();
-const corsOpts = {
-  origin: '*',
 
-  methods: [
-    'GET',
-    'POST',
-  ],
+app.use(cors({
+  origin:"https://majestic-kangaroo-39d8d2.netlify.app"
+}));
 
-  allowedHeaders: [
-    'Content-Type',
-  ],
-};
-app.use(cors(corsOpts));
 app.use(bodyParser.json());
 
 app.post('/contactMe', (req, res) => {
