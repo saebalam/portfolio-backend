@@ -7,9 +7,19 @@ const PORT = process.env.PORT || 9000;
 const sgMail = require('@sendgrid/mail')
 
 const app = express();
-app.use(cors({
-  origin:"http://localhost:3000"
-}));
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+app.use(cors(corsOpts));
 app.use(bodyParser.json());
 
 app.post('/contactMe', (req, res) => {
