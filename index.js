@@ -14,6 +14,10 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+  res.send('hello world')
+})
+
 app.post('/contactMe', (req, res) => {
     console.log(req.body)
     const sendername = req.body.name
