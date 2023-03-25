@@ -25,36 +25,36 @@ app.post('/contactMe', (req, res) => {
     const senderemail = req.body.email
     const sendermessage = req.body.message
     let from = `${senderemail}`
-    res.send(senderemail)
-    // var transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //       user: 'saebalam123@gmail.com',
-    //       pass: 'lol'
-    //     }
-    //   });
+    // res.send(true)
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'saebalam123@gmail.com',
+          pass: 'Pwnxu8750#-_q'
+        }
+      });
       
-    //   var mailOptions = {
-    //     from: 'temp',
-    //     to: 'saebalam123@gmail.com',
-    //     subject: 'interview intimation',
-    //     text: `New opportunity
+      var mailOptions = {
+        from: 'temp',
+        to: 'saebalam123@gmail.com',
+        subject: 'interview intimation',
+        text: `New opportunity
         
-    //         Name: ${sendername}
-    //         Phone: ${sendernumber}
-    //         Mail: ${senderemail}
-    //         Msg: ${sendermessage}
-    //         `
-    //   };
+            Name: ${sendername}
+            Phone: ${sendernumber}
+            Mail: ${senderemail}
+            Msg: ${sendermessage}
+            `
+      };
       
-    //   transporter.sendMail(mailOptions, function(error, info){
-    //     if (error) {
-    //       console.log(error);
-    //     } else {
-    //       console.log('Email sent: ' + info.response);
-    //       res.send("Sent successfully")
-    //     }
-    //   });
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+          res.send("Sent successfully")
+        }
+      });
 })
 
 app.listen(PORT, () => {
