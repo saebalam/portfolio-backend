@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 9000;
 const sgMail = require('@sendgrid/mail')
 
 const app = express();
-app.use('*', cors());
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/contactMe', (req, res) => {
